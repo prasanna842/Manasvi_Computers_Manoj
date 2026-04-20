@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manasvi Computers — Laptop & Desktop Repair, Powai</title>
+  <meta name="description" content="On-site laptop and desktop repair in Powai, Mumbai. Manoj comes to you. 16+ years experience. Starting ₹400." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy2: #162033;
+      --steel: #1e3a5f;
+      --accent: #e8793a;
+      --accent2: #f09c62;
+      --cream: #faf7f2;
+      --cream2: #f2ede5;
+      --muted: #6b7280;
+      --light: #9ca3af;
+      --white: #ffffff;
+      --border: rgba(255,255,255,0.08);
+      --border-light: rgba(0,0,0,0.1);
+      --shadow: 0 4px 32px rgba(13,27,42,0.12);
+      --shadow-lg: 0 12px 56px rgba(13,27,42,0.18);
+      --r: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 5%;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 5% 4rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,121,58,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+    .hero-badges {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .badge-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 0.4rem 0.875rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .badge-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
+    }
+
+    /* Hero stats card */
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
+      animation: floatUp 0.8s ease 0.2s both;
+    }
+
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .stat-num span { color: var(--accent); font-size: 1.5rem; }
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+    }
+
+    .hero-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 1.5rem 0;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .trust-tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* SECTION COMMON */
+    section { padding: 6rem 5%; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* SERVICES */
+    #services {
+      background: var(--white);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r);
+      padding: 2rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.3rem;
+    }
+
+    .service-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* WHY US */
+    #why {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    #why::before {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,121,58,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #why .section-title { color: var(--white); }
+    #why .section-sub { color: rgba(255,255,255,0.5); }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-points {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-point {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+    .why-num {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: rgba(232,121,58,0.12);
+      border: 1px solid rgba(232,121,58,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .why-point-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .why-point-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    .why-right {
+      position: relative;
+    }
+
+    .quote-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.4;
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+    }
+    .quote-source {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .comparison-strip {
+      margin-top: 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1rem;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
+      align-items: center;
+    }
+    .comparison-row:last-child { border-bottom: none; }
+    .comp-label { color: rgba(255,255,255,0.55); }
+    .comp-them {
+      color: rgba(255,100,100,0.8);
+      font-size: 0.78rem;
+      text-align: right;
+    }
+    .comp-us {
+      color: #4ade80;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: right;
+      min-width: 70px;
+    }
+
+    /* SERVICE AREA */
+    #area {
+      background: var(--cream2);
+    }
+
+    .area-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .locality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .locality-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .locality-pill svg { flex-shrink: 0; }
+
+    .contact-card {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 2.5rem;
+      color: var(--white);
+      position: sticky;
+      top: 6rem;
+    }
+    .contact-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .contact-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .contact-phone {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      transition: color 0.2s;
+    }
+    .contact-phone:hover { color: var(--accent); }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.875rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-call:hover { background: var(--accent2); }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      padding: 0.875rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp:hover { background: rgba(255,255,255,0.14); }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--accent);
+      padding: 4rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .cta-strip p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.25rem;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      color: var(--accent);
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy2);
+      padding: 3rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 0.25rem;
+    }
+    .footer-contact a {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+      text-align: right;
+    }
+    .footer-contact a:hover { color: var(--accent); }
+
+    /* MOBILE */
+    .hamburger { display: none; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 7rem; }
+      .hero-card { display: none; }
+      .why-layout, .area-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-card { position: static; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px; left: 0; right: 0; bottom: 0;
+        background: var(--cream);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        z-index: 150;
+        list-style: none;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-light);
+        box-shadow: 0 8px 32px rgba(13,27,42,0.12);
+        overflow-y: auto;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--navy);
+        padding: 1rem 5%;
+        border-bottom: 1px solid var(--border-light);
+        width: 100%;
+      }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-links .nav-cta {
+        margin: 1rem 5%;
+        width: calc(90%);
+        text-align: center;
+        border-radius: 8px;
+        padding: 0.875rem;
+        border-bottom: none;
+      }
+      .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--navy);
+        font-size: 1.5rem;
+        line-height: 1;
+        z-index: 200;
+        position: relative;
+      }
+      nav { padding: 1rem 4%; }
+      section { padding: 4rem 4%; }
+      .hero { padding: 6rem 4% 4rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .locality-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .footer-contact a { text-align: left; }
+    }
+
+    /* Mobile dropdown menu — sits outside nav element */
+    .mobile-nav-dropdown {
+      display: none;
+      position: fixed;
+      top: 58px; left: 0; right: 0;
+      z-index: 150;
+      background: var(--cream);
+      list-style: none;
+      border-top: 2px solid var(--accent);
+      box-shadow: 0 8px 32px rgba(13,27,42,0.18);
+      padding: 0.5rem 0 1rem;
+    }
+    .mobile-nav-dropdown.open { display: block; }
+    .mobile-nav-dropdown li { width: 100%; }
+    .mobile-nav-dropdown a {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy);
+      padding: 0.9rem 6%;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      text-decoration: none;
+    }
+    .mobile-nav-dropdown li:last-child a { border-bottom: none; }
+    .mobile-nav-cta-mobile,
+    .mobile-nav-dropdown .nav-cta-mobile {
+      display: block;
+      margin: 0.75rem 6% 0;
+      background: var(--accent);
+      color: var(--white) !important;
+      text-align: center;
+      border-radius: 8px;
+      padding: 0.875rem !important;
+      font-weight: 600 !important;
+      border-bottom: none !important;
+    }
+
+    /* QR landing banner */
+    .qr-banner {
+      display: none;
+      background: linear-gradient(135deg, var(--accent) 0%, #c9581a 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 1.25rem 3rem 1.25rem 5%;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 300;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+      animation: slideUp 0.4s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .qr-banner.show { display: flex; align-items: center; gap: 1rem; justify-content: space-between; flex-wrap: wrap; }
+    .qr-banner-text strong { font-size: 0.95rem; display: block; }
+    .qr-banner-text span { font-size: 0.8rem; opacity: 0.85; }
+    .qr-banner-btn {
+      background: var(--white); color: var(--accent);
+      border: none; border-radius: 8px;
+      padding: 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; flex-shrink: 0;
+      transition: opacity 0.2s;
+    }
+    .qr-banner-btn:hover { opacity: 0.9; }
+    .qr-banner-close {
+      position: absolute; top: 0.6rem; right: 0.75rem;
+      background: none; border: none; color: var(--white);
+      font-size: 1rem; cursor: pointer; opacity: 0.6; line-height: 1;
+    }
+
+    /* ===== REVIEWS SECTION ===== */
+    #reviews { background: var(--white); }
+
+    /* ── NEW: reviews top bar ── */
+    .reviews-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .reviews-topbar-left {}
+    .reviews-topbar-left .section-sub { margin: 0; }
+
+    /* Pulsing review button */
+    .btn-review-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #f59e0b;
+      color: var(--white);
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 0 0 rgba(245,158,11,0.5);
+      animation: reviewPulse 2.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .btn-review-top:hover {
+      background: #d97706;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,158,11,0.35);
+      animation: none;
+    }
+    @keyframes reviewPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(245,158,11,0.5); }
+      60%  { box-shadow: 0 0 0 10px rgba(245,158,11,0); }
+      100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+    }
+
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .review-card { background: var(--cream); border: 1px solid var(--border-light); border-radius: var(--r); padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .review-stars { color: #f59e0b; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.75rem; }
+    .review-service-tag { display: inline-block; background: rgba(232,121,58,0.1); color: var(--accent); border: 1px solid rgba(232,121,58,0.2); border-radius: 20px; font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.75rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .review-text { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { display: flex; align-items: center; gap: 0.6rem; }
+    .review-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .review-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+    .review-date { font-size: 0.75rem; color: var(--light); }
+    .review-cta-box { background: var(--navy); border-radius: 16px; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .review-cta-box h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 0.4rem; }
+    .review-cta-box p { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+    .btn-review { display: inline-flex; align-items: center; gap: 0.5rem; background: #f59e0b; color: var(--white); padding: 0.875rem 1.75rem; border-radius: 8px; font-size: 0.95rem; font-weight: 700; border: none; cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.15s; text-decoration: none; }
+    .btn-review:hover { background: #d97706; transform: translateY(-1px); }
+
+    /* REVIEW MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(13,27,42,0.75); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: var(--white); border-radius: 20px; padding: 2rem 2.25rem 2.25rem; max-width: 520px; width: 100%; position: relative; animation: modalIn 0.25s ease; }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: none; } }
+    .modal-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); line-height: 1; }
+    .modal-close:hover { color: var(--navy); }
+    .modal-step { display: none; }
+    .modal-step.active { display: block; }
+    .modal-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .modal-sub { font-size: 0.875rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .service-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .service-opt { background: var(--cream); border: 1.5px solid var(--border-light); border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.83rem; font-weight: 500; color: var(--navy); cursor: pointer; transition: border-color 0.15s, background 0.15s; text-align: left; }
+    .service-opt:hover { border-color: var(--accent); background: rgba(232,121,58,0.05); }
+    .service-opt.selected { border-color: var(--accent); background: rgba(232,121,58,0.08); color: var(--accent); }
+    .modal-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .generated-review { background: var(--cream); border: 1px solid var(--border-light); border-radius: 10px; padding: 1rem 1.1rem; font-size: 0.875rem; color: var(--navy); line-height: 1.65; min-height: 80px; margin-bottom: 1.25rem; white-space: pre-wrap; word-break: break-word; }
+    .modal-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-copy { flex: 1; background: var(--navy); color: var(--white); border: none; border-radius: 8px; padding: 0.8rem 1.25rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.4rem; transition: background 0.2s; }
+    .btn-copy:hover { background: var(--steel); }
+    .btn-copy.copied { background: #16a34a; }
+    .btn-goto { flex: 1; background: #f59e0b; color: var(--white); border: none; border-radius: 8px; padding: 0.8rem 1.25rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.4rem; text-decoration: none; transition: background 0.2s; }
+    .btn-goto:hover { background: #d97706; }
+    .copy-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+    .copy-hint strong { color: var(--accent); }
+    .modal-back { background: none; border: none; font-size: 0.82rem; color: var(--muted); cursor: pointer; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.3rem; padding: 0; }
+    .modal-back:hover { color: var(--navy); }
+    @media (max-width: 500px) { .service-options { grid-template-columns: 1fr; } .modal-box { padding: 1.5rem 1.25rem 1.75rem; } }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 600px) {
+      .reviews-topbar { flex-direction: column; align-items: flex-start; }
+      .btn-review-top { width: 100%; justify-content: center; }
+    }
+
+    /* Hero why-list card */
+    .hero-why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .hero-why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-why-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .hero-why-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(232,121,58,0.15);
+      border: 1px solid rgba(232,121,58,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .hero-why-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .hero-why-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#">Manasvi <span>Computers</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#area">Area</a></li>
+      <li><a href="#reviews">⭐ Reviews</a></li>
+      <li><a href="tel:9076335902" class="nav-cta">📞 Call Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+  </nav>
+  <!-- Mobile dropdown — outside nav so it's not clipped -->
+  <ul class="mobile-nav-dropdown" id="mobileNav">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#area">Area</a></li>
+    <li><a href="#reviews">⭐ Reviews</a></li>
+    <li><a href="tel:9076335902" class="nav-cta-mobile">📞 Call Now</a></li>
+  </ul>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <p class="hero-eyebrow">Powai · Mumbai · Since 2009</p>
+      <h1 class="hero-title">Your laptop fixed,<br /><em>at your door.</em></h1>
+      <p class="hero-sub">Manoj comes to you — homes, offices, hostels. No queues, no carrying your device. Trusted by IIT Bombay, Jio &amp; IDFC for 16+ years.</p>
+      <div class="hero-actions">
+        <a href="tel:9076335902" class="btn-primary">📞 Call 9076335902</a>
+        <a href="https://wa.me/919076335902?text=Hi%20Manoj%2C%20I%20need%20help%20with%20my%20laptop%2Fdesktop." class="btn-outline">💬 WhatsApp</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge-pill">🏠 Doorstep service</span>
+        <span class="badge-pill">~30% less than other shops</span>
+        <span class="badge-pill">Zero travel charges</span>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <p class="hero-card-label">Why Manasvi Computers?</p>
+      <div class="hero-why-list">
+        <div class="hero-why-item">
+          <div class="hero-why-icon">🏠</div>
+          <div>
+            <div class="hero-why-title">We come to you</div>
+            <div class="hero-why-desc">Home, office or hostel — no going to other shops</div>
+          </div>
+        </div>
+        <div class="hero-why-item">
+          <div class="hero-why-icon">💰</div>
+          <div>
+            <div class="hero-why-title">~30% cheaper than other shops</div>
+            <div class="hero-why-desc">Typically 30% less than other shops — know the cost before we start</div>
+          </div>
+        </div>
+        <div class="hero-why-item">
+          <div class="hero-why-icon">⚡</div>
+          <div>
+            <div class="hero-why-title">Usually same day</div>
+            <div class="hero-why-desc">Call now — Manoj confirms a slot and shows up</div>
+          </div>
+        </div>
+        <div class="hero-why-item">
+          <div class="hero-why-icon">🏆</div>
+          <div>
+            <div class="hero-why-title">16+ years experience</div>
+            <div class="hero-why-desc">Trusted by IIT Bombay, Jio, IDFC &amp; housing societies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">What we fix</p>
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">All repairs done on-site at your home or office. No need to carry your device anywhere — and typically 30% less than other shops.</p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">💻</div>
+        <div class="service-name">Laptop Repair</div>
+        <p class="service-desc">Screen replacement, keyboard issues, fan cleaning, slow performance, OS reinstall, motherboard repair, battery replacement.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🖥️</div>
+        <div class="service-name">Desktop Repair</div>
+        <p class="service-desc">Hardware upgrades, RAM/SSD installation, virus removal, OS setup, power supply issues.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📡</div>
+        <div class="service-name">Networking</div>
+        <p class="service-desc">WiFi setup, network switch configuration, LAN cabling, router installation for homes and offices.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📷</div>
+        <div class="service-name">CCTV Installation</div>
+        <p class="service-desc">End-to-end CCTV setup for homes, societies, and small businesses. Camera placement and DVR configuration.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🏢</div>
+        <div class="service-name">Corporate Support</div>
+        <p class="service-desc">IT maintenance for offices, bulk device servicing, AMC contracts for businesses and institutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="why-layout">
+      <div>
+        <p class="section-label reveal">Why choose Manasvi</p>
+        <h2 class="section-title reveal">Experience you can trust</h2>
+        <div class="why-points">
+          <div class="why-point reveal">
+            <div class="why-num">01</div>
+            <div>
+              <div class="why-point-title">Doorstep service</div>
+              <p class="why-point-desc">Manoj comes to your home or office. No carrying your device, no waiting at a shop.</p>
+            </div>
+          </div>
+          <div class="why-point reveal">
+            <div class="why-num">02</div>
+            <div>
+              <div class="why-point-title">Transparent pricing</div>
+              <p class="why-point-desc">Starting at ₹400 for student visits. No hidden charges — you know the cost before work begins.</p>
+            </div>
+          </div>
+          <div class="why-point reveal">
+            <div class="why-num">03</div>
+            <div>
+              <div class="why-point-title">Trusted by institutions</div>
+              <p class="why-point-desc">Serving IIT Bombay students, Jio, IDFC and housing societies across Powai for over a decade — at 30% less than other shops.</p>
+            </div>
+          </div>
+          <div class="why-point reveal">
+            <div class="why-num">04</div>
+            <div>
+              <div class="why-point-title">16+ years of expertise</div>
+              <p class="why-point-desc">Solved thousands of repair cases across laptops, desktops, networking and CCTV systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-right reveal">
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Other shops charge way more — and you have to go to them. Manoj fixes it at your door, typically 30% less than other services.</p>
+          <p class="quote-source">Powai customer, IIT ecosystem</p>
+        </div>
+
+        <div class="comparison-strip">
+          <div class="comparison-row">
+            <span class="comp-label" style="font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.08em;">Service</span>
+            <span class="comp-them" style="color:rgba(255,255,255,0.3);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;font-size:0.7rem;">Other Shop</span>
+            <span class="comp-us" style="color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;font-size:0.7rem;">Manasvi</span>
+          </div>
+          <div class="comparison-row">
+            <span class="comp-label">Travel required</span>
+            <span class="comp-them">Yes</span>
+            <span class="comp-us">No</span>
+          </div>
+          <div class="comparison-row">
+            <span class="comp-label">Price vs other shops</span>
+            <span class="comp-them">Full price</span>
+            <span class="comp-us">~30% less</span>
+          </div>
+          <div class="comparison-row">
+            <span class="comp-label">Same-day service</span>
+            <span class="comp-them">Rarely</span>
+            <span class="comp-us">Usually</span>
+          </div>
+          <div class="comparison-row">
+            <span class="comp-label">Travel charges</span>
+            <span class="comp-them">Your time</span>
+            <span class="comp-us">₹0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section id="area">
+    <div class="area-layout">
+      <div>
+        <p class="section-label reveal">Where we come</p>
+        <h2 class="section-title reveal">Service area</h2>
+        <p class="section-sub reveal">Based in Powai — serving the full Powai–IIT–Hiranandani belt and surrounding areas.</p>
+
+        <div class="locality-grid">
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Powai
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            IIT Bombay Campus
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Hiranandani Gardens
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Chandivali
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Andheri East
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Vikhroli
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Kanjurmarg
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Thane
+          </div>
+          <div class="locality-pill reveal">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#e8793a" stroke-width="1.2"/><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6c0 3.75 4.5 7 4.5 7s4.5-3.25 4.5-7c0-2.485-2.015-4.5-4.5-4.5z" stroke="#e8793a" stroke-width="1.2"/></svg>
+            Mulund
+          </div>
+          <div class="locality-pill reveal" style="border-style:dashed;color:var(--muted);">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#9ca3af" stroke-width="1.2"/><path d="M7 4v3l2 1.5" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Just call to check!
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <p class="contact-card-label">Book a visit</p>
+        <h3>Ready to get it fixed?</h3>
+        <p>Call or WhatsApp Manoj directly. He'll confirm a time and come to you — usually same day.</p>
+        <a class="contact-phone" href="tel:9076335902">9076335902</a>
+        <div class="contact-actions">
+          <a href="tel:9076335902" class="btn-call">📞 Call Now</a>
+          <a href="https://wa.me/919076335902?text=Hi%20Manoj%2C%20I%20need%20help%20with%20my%20laptop%2Fdesktop." class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews">
+
+    <!-- ── TOP BAR: heading left, button right ── -->
+    <div class="reviews-topbar reveal">
+      <div class="reviews-topbar-left">
+        <p class="section-label">What customers say</p>
+        <h2 class="section-title">Trusted by Powai &amp; IIT</h2>
+        <p class="section-sub">Real repairs. Real people. Doorstep service that speaks for itself.</p>
+      </div>
+      <button class="btn-review-top" onclick="openReviewModal()">⭐ Write a Review</button>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">Laptop Fan Repair</span>
+        <p class="review-text">My laptop was overheating badly before exams. Manoj came to my hostel room within 2 hours, cleaned the fan and replaced the thermal paste. Works perfectly now. ₹400 is unbeatable for this quality.</p>
+        <div class="review-author">
+          <div class="review-avatar">RK</div>
+          <div><div class="review-name">Rahul K.</div><div class="review-date">IIT Bombay student</div></div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">Screen Replacement</span>
+        <p class="review-text">Cracked my Dell screen and was dreading the repair cost. Manoj sourced the part the same day and replaced it at my Hiranandani flat. Clean job, honest price. No shop visit needed at all.</p>
+        <div class="review-author">
+          <div class="review-avatar">SP</div>
+          <div><div class="review-name">Sneha P.</div><div class="review-date">Hiranandani resident</div></div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">WiFi / Networking</span>
+        <p class="review-text">Our office WiFi was dropping constantly. Manoj reconfigured the router and fixed the LAN cabling in under an hour. Everyone else quoted ₹1,500+. He charged ₹600 and the problem hasn't come back.</p>
+        <div class="review-author">
+          <div class="review-avatar">AM</div>
+          <div><div class="review-name">Amit M.</div><div class="review-date">Chandivali office</div></div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">OS Reinstall / Slow PC</span>
+        <p class="review-text">My 5-year-old laptop was barely usable. Manoj reinstalled Windows, set up drivers, cleared junk — it feels brand new. Came home the same evening I called. Genuine expert, no upselling.</p>
+        <div class="review-author">
+          <div class="review-avatar">NJ</div>
+          <div><div class="review-name">Nisha J.</div><div class="review-date">Powai resident</div></div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">RAM / SSD Upgrade</span>
+        <p class="review-text">Upgraded my laptop from HDD to SSD. Manoj brought the part, did the swap and data transfer at home. Boot time went from 2 minutes to 10 seconds. Best ₹800 I've spent on this machine.</p>
+        <div class="review-author">
+          <div class="review-avatar">VB</div>
+          <div><div class="review-name">Varun B.</div><div class="review-date">IIT Bombay research scholar</div></div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <span class="review-service-tag">Keyboard Repair</span>
+        <p class="review-text">Several keys stopped working on my MacBook. Manoj diagnosed it accurately, replaced the faulty keys. Much cheaper than an Apple Store visit and he came to my apartment in Powai. Highly recommend!</p>
+        <div class="review-author">
+          <div class="review-avatar">TG</div>
+          <div><div class="review-name">Tanvi G.</div><div class="review-date">Powai resident</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-cta-box reveal">
+      <div>
+        <h3>Had a repair done by Manoj?</h3>
+        <p>Your review helps the next person in Powai find trusted, affordable help — in 60 seconds.</p>
+      </div>
+      <button class="btn-review" onclick="openReviewModal()">⭐ Write a Review</button>
+    </div>
+  </section>
+
+  <!-- REVIEW MODAL -->
+  <div class="modal-overlay" id="reviewModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeReviewModal()">✕</button>
+
+      <!-- Step 1: Choose service -->
+      <div class="modal-step active" id="step1">
+        <p class="modal-title">What did Manoj fix for you?</p>
+        <p class="modal-sub">Pick the service — we'll prepare a review you can post in one click.</p>
+        <div class="service-options">
+          <button class="service-opt" onclick="selectService(this, 'Laptop Fan Repair', 'My laptop fan was making noise / overheating. Manoj came to my place, cleaned the fan and fixed it quickly. Doorstep service at ₹400 — much cheaper than any shop nearby. Highly recommend!')">💨 Fan Cleaning</button>
+          <button class="service-opt" onclick="selectService(this, 'Screen Replacement', 'Manoj replaced my cracked laptop screen at home. He sourced the part quickly and the job was done neatly. Saved me the hassle of going to a shop. Great service and honest pricing.')">🖥️ Screen Replacement</button>
+          <button class="service-opt" onclick="selectService(this, 'Battery Replacement', 'Got my laptop battery replaced by Manoj at home. Genuine part, quick turnaround, and much cheaper than what shops quoted. Really convenient doorstep service.')">🔋 Battery Replacement</button>
+          <button class="service-opt" onclick="selectService(this, 'OS Reinstall / Slow Laptop', 'My laptop was extremely slow. Manoj came home, reinstalled the OS and set everything up. It runs like new now. Fast, affordable, and no need to leave home.')">⚡ Slow PC / OS Reinstall</button>
+          <button class="service-opt" onclick="selectService(this, 'RAM / SSD Upgrade', 'Manoj upgraded my laptop with an SSD at home. Handled the data transfer too. The speed difference is incredible. Excellent value and zero hassle.')">💾 RAM / SSD Upgrade</button>
+          <button class="service-opt" onclick="selectService(this, 'Keyboard Repair', 'Several keys on my laptop stopped working. Manoj diagnosed and fixed it at my home. Quick, reasonably priced, and no need to visit a service centre.')">⌨️ Keyboard Repair</button>
+          <button class="service-opt" onclick="selectService(this, 'WiFi / Networking Setup', 'Manoj fixed our WiFi and network setup at home. Faster and cheaper than anyone else I found. Very knowledgeable, sorted it in under an hour.')">📡 WiFi / Networking</button>
+          <button class="service-opt" onclick="selectService(this, 'CCTV Installation', 'Manoj installed CCTV cameras at my place. Clean installation, explained everything clearly, and the pricing was very fair. Highly recommended for home security setup.')">📷 CCTV Installation</button>
+          <button class="service-opt" onclick="selectService(this, 'Virus Removal / Desktop Repair', 'Had a virus issue on my desktop — Manoj came home, removed it and optimised the system. Very thorough and professional. No need to drag the desktop anywhere.')">🛡️ Virus Removal</button>
+          <button class="service-opt" onclick="selectService(this, 'General Laptop/Desktop Repair', 'Manoj repaired my device at home. Very knowledgeable, quick, and honest about pricing. No hidden charges. 16+ years of experience really shows. Will call again for sure.')">🔧 Other Repair</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Copy & Go -->
+      <div class="modal-step" id="step2">
+        <button class="modal-back" onclick="goBack()">← Back</button>
+        <p class="modal-title">Your review is ready ✓</p>
+        <p class="modal-sub">Feel free to edit it, then copy and paste it on Google.</p>
+        <p class="modal-label">Your review text</p>
+        <div class="generated-review" id="reviewText" contenteditable="true"></div>
+        <div class="modal-actions">
+          <button class="btn-copy" id="copyBtn" onclick="copyReview()">📋 Copy Text</button>
+          <a class="btn-goto" href="https://search.google.com/local/writereview?placeid=ChIJ55ZqmN7H5zsRh5yj1dYgX2k&source=g.page.m.dc._&laa=gpay-review-qr-tab-downloaded-card" target="_blank" rel="noopener" onclick="closeReviewModal()">⭐ Open Google Review →</a>
+        </div>
+        <p class="copy-hint">1. <strong>Copy the text above</strong> &nbsp;·&nbsp; 2. Click "Open Google Review" &nbsp;·&nbsp; 3. Paste &amp; post — done in 60 seconds!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip reveal">
+    <div>
+      <h2>Don't haul your laptop anywhere.</h2>
+      <p>Manoj comes to you. Powai, IIT, Hiranandani and surrounding areas.</p>
+    </div>
+    <a href="tel:9076335902" class="btn-white">📞 9076335902</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <a class="footer-logo" href="#">Manasvi <span>Computers</span></a>
+      <p class="footer-text">Powai, Mumbai · On-site laptop & desktop repair since 2009</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:9076335902">9076335902</a>
+      <a href="https://wa.me/919076335902">WhatsApp</a>
+    </div>
+  </footer>
+
+
+  <!-- QR LANDING BANNER -->
+  <div class="qr-banner" id="qrBanner">
+    <div class="qr-banner-text">
+      <strong>👋 Thanks for scanning!</strong>
+      <span>Share your experience with Manoj — takes 60 seconds.</span>
+    </div>
+    <button class="qr-banner-btn" onclick="openReviewModal(); dismissQrBanner()">⭐ Write a Review</button>
+    <button class="qr-banner-close" onclick="dismissQrBanner()" aria-label="Close">✕</button>
+  </div>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Review modal
+    function openReviewModal() {
+      document.getElementById('reviewModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('step1').classList.add('active');
+      document.getElementById('step2').classList.remove('active');
+      document.querySelectorAll('.service-opt').forEach(b => b.classList.remove('selected'));
+    }
+    function closeReviewModal() {
+      document.getElementById('reviewModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeModalOnOverlay(e) {
+      if (e.target === document.getElementById('reviewModal')) closeReviewModal();
+    }
+    function selectService(btn, serviceName, reviewText) {
+      document.querySelectorAll('.service-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('reviewText').textContent = reviewText;
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
+      const copyBtn = document.getElementById('copyBtn');
+      copyBtn.textContent = '📋 Copy Text';
+      copyBtn.classList.remove('copied');
+    }
+    function goBack() {
+      document.getElementById('step2').classList.remove('active');
+      document.getElementById('step1').classList.add('active');
+    }
+    function copyReview() {
+      const text = document.getElementById('reviewText').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = '📋 Copy Text'; btn.classList.remove('copied'); }, 2500);
+      }).catch(() => {
+        const el = document.getElementById('reviewText');
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = '📋 Copy Text'; btn.classList.remove('copied'); }, 2500);
+      });
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReviewModal(); });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      hamburger.textContent = '☰';
+    }
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.textContent = isOpen ? '✕' : '☰';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#nav') && !e.target.closest('#mobileNav')) closeMenu();
+    });
+
+    // QR landing logic — show banner if ?review=1 in URL, also auto-open modal
+    function dismissQrBanner() {
+      document.getElementById('qrBanner').classList.remove('show');
+    }
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('review') === '1') {
+        // Scroll to reviews section
+        setTimeout(() => {
+          const reviewSection = document.getElementById('reviews');
+          if (reviewSection) reviewSection.scrollIntoView({ behavior: 'smooth' });
+          // Show bottom banner
+          document.getElementById('qrBanner').classList.add('show');
+          // Auto-open modal after brief delay so user sees the section first
+          setTimeout(() => openReviewModal(), 900);
+        }, 400);
+      }
+    })();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
