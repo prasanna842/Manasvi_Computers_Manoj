@@ -905,7 +905,8 @@
     .modal-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); margin-bottom: 0.4rem; }
     .modal-sub { font-size: 0.875rem; color: var(--muted); margin-bottom: 1.5rem; }
     .service-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.5rem; }
-    .service-opt { background: var(--cream); border: 1.5px solid var(--border-light); border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.83rem; font-weight: 500; color: var(--navy); cursor: pointer; transition: border-color 0.15s, background 0.15s; text-align: left; }
+    .service-opt { background: var(--cream); border: 1.5px solid var(--border-light); border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.83rem; font-weight: 500; color: var(--navy); cursor: pointer; transition: border-color 0.15s, background 0.15s; text-align: left; min-height: 56px; display: flex; align-items: center; }
+    .other-repair-wrap { background: var(--cream); border: 1.5px solid var(--border-light); border-radius: 8px; padding: 0.65rem 0.9rem; cursor: default; grid-column: 1 / -1; }
     .service-opt:hover { border-color: var(--accent); background: rgba(232,121,58,0.05); }
     .service-opt.selected { border-color: var(--accent); background: rgba(232,121,58,0.08); color: var(--accent); }
     .modal-label { font-size: 0.8rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
@@ -920,7 +921,9 @@
     .copy-hint strong { color: var(--accent); }
     .modal-back { background: none; border: none; font-size: 0.82rem; color: var(--muted); cursor: pointer; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.3rem; padding: 0; }
     .modal-back:hover { color: var(--navy); }
-    @media (max-width: 500px) { .service-options { grid-template-columns: 1fr; } .modal-box { padding: 1.5rem 1.25rem 1.75rem; } }
+    @media (max-width: 500px) { .service-options { grid-template-columns: 1fr 1fr; } .modal-box { padding: 1.5rem 1.25rem 1.75rem; } }
+    @media (max-width: 360px) { .service-options { grid-template-columns: 1fr; } }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     /* Scroll reveal */
     .reveal {
@@ -929,6 +932,11 @@
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* Hero content always visible — no fade needed */
+    .hero .reveal {
       opacity: 1;
       transform: none;
     }
@@ -1081,6 +1089,11 @@
         <p class="service-desc">End-to-end CCTV setup for homes, societies, and small businesses. Camera placement and DVR configuration.</p>
       </div>
 
+      <div class="service-card reveal">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">Hardware Sales</div>
+        <p class="service-desc">RAM, SSDs, keyboards, mice, cables and peripherals — sourced and installed at competitive prices.</p>
+      </div>
       <div class="service-card reveal">
         <div class="service-icon">🏢</div>
         <div class="service-name">Corporate Support</div>
@@ -1240,7 +1253,13 @@
         <h2 class="section-title">Trusted by Powai &amp; IIT</h2>
         <p class="section-sub">Real repairs. Real people. Doorstep service that speaks for itself.</p>
       </div>
-      <button class="btn-review-top" onclick="openReviewModal()">⭐ Write a Review</button>
+<div style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-end;">
+        <button class="btn-review-top" onclick="openReviewModal()">⭐ Write a Review</button>
+        <a href="https://www.google.com/search?sca_esv=a3d84300357be008&sxsrf=ANbL-n5ig6wFJhSA3q-u_hg_yTKwSMI6UA:1776683738525&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOb4Y7MzmPDIolF0O6I-TgQjnmtNP09rP7OuyAGBY2ttuDliH1Yk6oQzBo0zvIX-Y3ZJjArisu8yVy9InjK1_4T_VrYYNxkZdTKD0bMZfnBu3mAfFDA%3D%3D&q=Manasvi+computers+Reviews&sa=X&ved=2ahUKEwi_s_PYpvyTAxWb4zgGHc9PHnIQ0bkNegQINRAF&biw=1920&bih=911&dpr=1" target="_blank" rel="noopener" style="font-size:0.8rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          See all Google Reviews →
+        </a>
+      </div>
     </div>
 
     <div class="reviews-grid">
@@ -1310,7 +1329,12 @@
         <h3>Had a repair done by Manoj?</h3>
         <p>Your review helps the next person in Powai find trusted, affordable help — in 60 seconds.</p>
       </div>
-      <button class="btn-review" onclick="openReviewModal()">⭐ Write a Review</button>
+<div style="display:flex;flex-direction:column;gap:0.75rem;align-items:center;">
+        <button class="btn-review" onclick="openReviewModal()">⭐ Write a Review</button>
+        <a href="https://www.google.com/search?sca_esv=a3d84300357be008&sxsrf=ANbL-n5ig6wFJhSA3q-u_hg_yTKwSMI6UA:1776683738525&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOb4Y7MzmPDIolF0O6I-TgQjnmtNP09rP7OuyAGBY2ttuDliH1Yk6oQzBo0zvIX-Y3ZJjArisu8yVy9InjK1_4T_VrYYNxkZdTKD0bMZfnBu3mAfFDA%3D%3D&q=Manasvi+computers+Reviews&sa=X&ved=2ahUKEwi_s_PYpvyTAxWb4zgGHc9PHnIQ0bkNegQINRAF&biw=1920&bih=911&dpr=1" target="_blank" rel="noopener" style="font-size:0.8rem;color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
+          See all our Google Reviews →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1324,28 +1348,42 @@
         <p class="modal-title">What did Manoj fix for you?</p>
         <p class="modal-sub">Pick the service — we'll prepare a review you can post in one click.</p>
         <div class="service-options">
-          <button class="service-opt" onclick="selectService(this, 'Laptop Fan Repair', 'My laptop fan was making noise / overheating. Manoj came to my place, cleaned the fan and fixed it quickly. Doorstep service at ₹400 — much cheaper than any shop nearby. Highly recommend!')">💨 Fan Cleaning</button>
-          <button class="service-opt" onclick="selectService(this, 'Screen Replacement', 'Manoj replaced my cracked laptop screen at home. He sourced the part quickly and the job was done neatly. Saved me the hassle of going to a shop. Great service and honest pricing.')">🖥️ Screen Replacement</button>
-          <button class="service-opt" onclick="selectService(this, 'Battery Replacement', 'Got my laptop battery replaced by Manoj at home. Genuine part, quick turnaround, and much cheaper than what shops quoted. Really convenient doorstep service.')">🔋 Battery Replacement</button>
-          <button class="service-opt" onclick="selectService(this, 'OS Reinstall / Slow Laptop', 'My laptop was extremely slow. Manoj came home, reinstalled the OS and set everything up. It runs like new now. Fast, affordable, and no need to leave home.')">⚡ Slow PC / OS Reinstall</button>
-          <button class="service-opt" onclick="selectService(this, 'RAM / SSD Upgrade', 'Manoj upgraded my laptop with an SSD at home. Handled the data transfer too. The speed difference is incredible. Excellent value and zero hassle.')">💾 RAM / SSD Upgrade</button>
-          <button class="service-opt" onclick="selectService(this, 'Keyboard Repair', 'Several keys on my laptop stopped working. Manoj diagnosed and fixed it at my home. Quick, reasonably priced, and no need to visit a service centre.')">⌨️ Keyboard Repair</button>
-          <button class="service-opt" onclick="selectService(this, 'WiFi / Networking Setup', 'Manoj fixed our WiFi and network setup at home. Faster and cheaper than anyone else I found. Very knowledgeable, sorted it in under an hour.')">📡 WiFi / Networking</button>
-          <button class="service-opt" onclick="selectService(this, 'CCTV Installation', 'Manoj installed CCTV cameras at my place. Clean installation, explained everything clearly, and the pricing was very fair. Highly recommended for home security setup.')">📷 CCTV Installation</button>
-          <button class="service-opt" onclick="selectService(this, 'Virus Removal / Desktop Repair', 'Had a virus issue on my desktop — Manoj came home, removed it and optimised the system. Very thorough and professional. No need to drag the desktop anywhere.')">🛡️ Virus Removal</button>
-          <button class="service-opt" onclick="selectService(this, 'General Laptop/Desktop Repair', 'Manoj repaired my device at home. Very knowledgeable, quick, and honest about pricing. No hidden charges. 16+ years of experience really shows. Will call again for sure.')">🔧 Other Repair</button>
+          <button class="service-opt" onclick="selectService(this, 'Laptop Fan Repair')">💨 Fan Cleaning</button>
+          <button class="service-opt" onclick="selectService(this, 'Screen Replacement')">🖥️ Screen Replacement</button>
+          <button class="service-opt" onclick="selectService(this, 'Battery Replacement')">🔋 Battery Replacement</button>
+          <button class="service-opt" onclick="selectService(this, 'OS Reinstall / Slow Laptop')">⚡ Slow PC / OS Reinstall</button>
+          <button class="service-opt" onclick="selectService(this, 'RAM / SSD Upgrade')">💾 RAM / SSD Upgrade</button>
+          <button class="service-opt" onclick="selectService(this, 'Keyboard Repair')">⌨️ Keyboard Repair</button>
+          <button class="service-opt" onclick="selectService(this, 'WiFi / Networking Setup')">📡 WiFi / Networking</button>
+          <button class="service-opt" onclick="selectService(this, 'CCTV Installation')">📷 CCTV Installation</button>
+          <button class="service-opt" onclick="selectService(this, 'Virus Removal / Desktop Repair')">🛡️ Virus Removal</button>
+          <div class="service-opt other-repair-wrap" id="otherRepairWrap">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;font-size:0.83rem;font-weight:600;color:var(--navy);">🔧 Other Repair</div>
+            <input type="text" id="otherRepairInput" placeholder="e.g. Charging port, Touchpad..." 
+              style="width:100%;border:1.5px solid var(--border-light);border-radius:6px;padding:0.5rem 0.75rem;font-size:0.82rem;font-family:inherit;color:var(--navy);background:var(--white);outline:none;"
+              onfocus="this.style.borderColor='var(--accent)'" 
+              onblur="this.style.borderColor='var(--border-light)'"
+              onkeydown="if(event.key==='Enter'){event.preventDefault();submitOtherRepair()}"
+            />
+            <button onclick="submitOtherRepair()" style="margin-top:0.5rem;width:100%;background:var(--accent);color:white;border:none;border-radius:6px;padding:0.5rem;font-size:0.82rem;font-weight:600;cursor:pointer;">Generate Review →</button>
+          </div>
         </div>
       </div>
 
       <!-- Step 2: Copy & Go -->
       <div class="modal-step" id="step2">
         <button class="modal-back" onclick="goBack()">← Back</button>
-        <p class="modal-title">Your review is ready ✓</p>
+        <p class="modal-title" id="step2Title">Generating your review…</p>
         <p class="modal-sub">Feel free to edit it, then copy and paste it on Google.</p>
         <p class="modal-label">Your review text</p>
-        <div class="generated-review" id="reviewText" contenteditable="true"></div>
+        <div class="generated-review" id="reviewText" contenteditable="true">
+          <div id="reviewLoading" style="display:flex;align-items:center;gap:0.75rem;color:var(--muted);font-style:italic;font-size:0.85rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite;flex-shrink:0"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            Writing a fresh review just for you…
+          </div>
+        </div>
         <div class="modal-actions">
-          <button class="btn-copy" id="copyBtn" onclick="copyReview()">📋 Copy Text</button>
+          <button class="btn-copy" id="copyBtn" onclick="copyReview()" disabled style="opacity:0.5">📋 Copy Text</button>
           <a class="btn-goto" href="https://search.google.com/local/writereview?placeid=ChIJ55ZqmN7H5zsRh5yj1dYgX2k&source=g.page.m.dc._&laa=gpay-review-qr-tab-downloaded-card" target="_blank" rel="noopener" onclick="closeReviewModal()">⭐ Open Google Review →</a>
         </div>
         <p class="copy-hint">1. <strong>Copy the text above</strong> &nbsp;·&nbsp; 2. Click "Open Google Review" &nbsp;·&nbsp; 3. Paste &amp; post — done in 60 seconds!</p>
@@ -1407,15 +1445,133 @@
     function closeModalOnOverlay(e) {
       if (e.target === document.getElementById('reviewModal')) closeReviewModal();
     }
-    function selectService(btn, serviceName, reviewText) {
+    function submitOtherRepair() {
+      const input = document.getElementById('otherRepairInput');
+      const val = input.value.trim();
+      if (!val) { input.focus(); input.style.borderColor='var(--accent)'; return; }
+      selectService(null, val);
+    }
+
+    async function selectService(btn, serviceName) {
       document.querySelectorAll('.service-opt').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      document.getElementById('reviewText').textContent = reviewText;
+      if (btn) btn.classList.add('selected');
+
+      // Show step 2 with loading state
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
+      document.getElementById('step2Title').textContent = 'Generating your review…';
+
+      const reviewBox = document.getElementById('reviewText');
       const copyBtn = document.getElementById('copyBtn');
+
+      // Show spinner
+      reviewBox.contentEditable = 'false';
+      reviewBox.innerHTML = `<div id="reviewLoading" style="display:flex;align-items:center;gap:0.75rem;color:var(--muted);font-style:italic;font-size:0.85rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite;flex-shrink:0"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>Writing a fresh review just for you…</div>`;
+      copyBtn.disabled = true;
+      copyBtn.style.opacity = '0.5';
       copyBtn.textContent = '📋 Copy Text';
       copyBtn.classList.remove('copied');
+
+      try {
+        const prompt = `Write a short, genuine-sounding Google review for Manoj at Manasvi Computers, Powai, Mumbai. The specific service the customer got done is: "${serviceName}".
+
+CRITICAL RULES:
+- You MUST explicitly mention the specific service "${serviceName}" by name in the review
+- 2-4 sentences only
+- Sound like a real person — vary tone, vocabulary, sentence structure every time so no two reviews look alike
+- Mention he came to their home/doorstep (no shop visit needed)
+- Mention it was affordable or cheaper than other shops (no exact numbers)
+- End positively
+- Vary the opening — do NOT always start with "I"
+- Return ONLY the review text, nothing else, no quotes`;
+
+        const result = await new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', 'https://api.anthropic.com/v1/messages', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.timeout = 15000;
+          xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(JSON.parse(xhr.responseText));
+            } else {
+              reject(new Error('API error: ' + xhr.status));
+            }
+          };
+          xhr.onerror = () => reject(new Error('Network error'));
+          xhr.ontimeout = () => reject(new Error('Timeout'));
+          xhr.send(JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1000,
+            messages: [{ role: 'user', content: prompt }]
+          }));
+        });
+
+        const review = result.content[0].text.trim();
+        reviewBox.contentEditable = 'true';
+        reviewBox.textContent = review;
+        copyBtn.disabled = false;
+        copyBtn.style.opacity = '1';
+        document.getElementById('step2Title').textContent = 'Your review is ready ✓';
+
+      } catch (err) {
+        // Fallback to a static review if API fails
+        const fallbackPool = {
+          "Laptop Fan Repair": [
+            "My laptop was overheating badly — Manoj came home, cleaned the fan and applied fresh thermal paste. Fixed in under an hour, much cheaper than any shop nearby. Runs cool now.",
+            "Fan cleaning done at home by Manoj. Did not have to go anywhere, and the price was way lower than what other shops quoted. Very happy with the service.",
+            "Manoj sorted my laptop fan issue at my place itself. Quick diagnosis, clean work, and honest pricing. No shop visit needed — exactly what I was looking for."
+          ],
+          "Screen Replacement": [
+            "Cracked my laptop screen and Manoj got it replaced at home the same day. Sourced the part fast, clean installation, and charged much less than other shops. Highly recommend.",
+            "Got my screen replaced by Manoj without leaving home. Really professional job and the price was very reasonable compared to service centres. Great experience.",
+            "Manoj came over and replaced my broken screen — neat job, no fuss, and way more affordable than going to a shop. Saved me a lot of time and money."
+          ],
+          "Battery Replacement": [
+            "Battery was draining within minutes — Manoj replaced it at home with a genuine part. Much cheaper than what shops quoted and done really quickly. Great service.",
+            "Got my laptop battery replaced by Manoj at home. Fast, reliable, and very affordable. Did not have to carry my laptop anywhere. Will call again.",
+            "Manoj came home and sorted my battery issue the same day. Genuine part, clean work, and honest pricing. Exactly the kind of service I was hoping for."
+          ],
+          "OS Reinstall / Slow Laptop": [
+            "My laptop was barely usable — Manoj came home, reinstalled Windows and set everything up cleanly. Feels brand new now. Fast, affordable, zero hassle.",
+            "Slow laptop fixed by Manoj at home. He reinstalled the OS, set up drivers, and cleared everything out. Much cheaper than taking it to a shop. Really impressed.",
+            "Manoj came over and did a full OS reinstall — my laptop boots in seconds now. Professional job, came the same day I called, and priced way below other options."
+          ],
+          "RAM / SSD Upgrade": [
+            "Got an SSD upgrade done by Manoj at home including full data transfer. Boot time went from minutes to seconds. Incredible value and zero hassle.",
+            "Manoj upgraded my laptop RAM and SSD at home. The performance difference is night and day. Cheaper than shops and way more convenient. Highly recommend.",
+            "Asked Manoj to upgrade my storage — he came home, handled everything including data migration, and charged much less than I expected. Laptop flies now."
+          ],
+          "Keyboard Repair": [
+            "Several keys stopped working on my laptop — Manoj came home, diagnosed and fixed it cleanly. Much cheaper than a service centre and no need to go anywhere.",
+            "Keyboard fixed at home by Manoj. Quick, professional, and very reasonably priced. Saved me the trip to a shop and a lot of money. Really satisfied.",
+            "Manoj sorted my keyboard issue at my flat itself. Accurate diagnosis, neat repair, and honest pricing. Exactly the kind of trustworthy service you want."
+          ],
+          "WiFi / Networking Setup": [
+            "WiFi was dropping constantly — Manoj reconfigured everything at home in under an hour. Problem has not returned since and he charged way less than others quoted.",
+            "Manoj sorted our office networking at home. Very knowledgeable, got it done quickly, and much more affordable than other options. Highly recommend.",
+            "Called Manoj for WiFi setup — came the same day, fixed everything cleanly, and charged a very fair price. No need to go anywhere. Excellent service."
+          ],
+          "CCTV Installation": [
+            "Manoj installed CCTV cameras at home — clean setup, explained everything clearly, and priced very fairly. Much more affordable than other vendors I contacted.",
+            "Got CCTV done by Manoj at home. Professional installation, good camera placement, and honest pricing. Really happy with how it turned out.",
+            "Manoj came home and set up the entire CCTV system neatly. Walked me through how to use it and charged way less than other quotes I received. Highly recommended."
+          ],
+          "Virus Removal / Desktop Repair": [
+            "Desktop had a bad virus — Manoj came home, cleaned the entire system thoroughly. No need to drag it anywhere. Professional, affordable, and efficient.",
+            "Manoj removed a stubborn virus from my desktop at home. Thorough job, honest pricing, and saved me the trouble of carrying the machine to a shop.",
+            "Called Manoj for virus removal — came the same day, sorted everything properly, and charged much less than what shops quoted. Very reliable service."
+          ],
+        };
+        const pool = fallbackPool[serviceName];
+        const fallback = pool
+          ? pool[Math.floor(Math.random() * pool.length)]
+          : `Manoj came home and fixed my ${serviceName} — no shop visit needed, very affordable, and done quickly. Much cheaper than other shops. Will definitely call again.`;
+        reviewBox.contentEditable = 'true';
+        reviewBox.textContent = fallback;
+        copyBtn.disabled = false;
+        copyBtn.style.opacity = '1';
+        document.getElementById('step2Title').textContent = 'Your review is ready ✓';
+      }
     }
     function goBack() {
       document.getElementById('step2').classList.remove('active');
